@@ -56,7 +56,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                          Column(
                           children:
                            [
-                            Text('305°F',
+                            Text('286K',
                             style: TextStyle(
                               fontSize: 32,
                               fontWeight: FontWeight.bold),
@@ -88,15 +88,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 scrollDirection: Axis.horizontal,
                    child: Row(
                       children: [
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
-                        Forecast(),
+                        Forecast(time: '3:23 AM',icon: (Icons.cloud), farenhite: '289'),
+                        Forecast(time: '12:01 PM',icon: (Icons.sunny), farenhite: '302'),
+                        Forecast(time: '4:29 PM',icon: (Icons.sunny), farenhite: '299'),
+                        Forecast(time: '5:08 PM',icon: (Icons.sunny), farenhite: '303'),
+                        Forecast(time: '6:48 PM',icon: (Icons.cloud), farenhite: '295'),
+                        Forecast(time: '7:03 PM',icon: (Icons.cloud), farenhite: '288')
                         
                       ],
                     ),
