@@ -1,6 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-
-
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -26,14 +26,35 @@ class _WeatherScreenState extends State<WeatherScreen> {
           padding: const EdgeInsets.all(10.0),
           child: Column(mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                height: 230,
-                width: double.infinity,
-                
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(158, 228, 228, 214),
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                  backgroundBlendMode: BlendMode.hardLight,
+              Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+                  child: 
+                  Container(
+                  width: double.infinity,
+                  
+                  child: 
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                   
+                    child:
+                     BackdropFilter( 
+                      filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
+                      
+                    child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        
+                        child: Column(
+                          children: [
+                            Text('305°F',style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                            Icon(Icons.cloud,size: 64,),
+                            Text('Rain',style: TextStyle(fontSize: 18),)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               )
 
