@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:weather_app/addi_info.dart';
 import 'package:weather_app/weather_forecasr.dart';
 
 class WeatherScreen extends StatefulWidget {
@@ -22,14 +23,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
           ],
         ),
 
-        body: Padding(
+        body: 
+        Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Column(mainAxisAlignment: MainAxisAlignment.start,
-            children: [
+          
+          child: 
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: 
+            [
               Card(
                 elevation: 10,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(16)),
+                  
                   child: 
                   Container(
                   width: double.infinity,
@@ -45,10 +52,18 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         
-                        child: Column(
-                          children: [
-                            Text('305°F',style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                        child:
+                         Column(
+                          children:
+                           [
+                            Text('305°F',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold),
+                              ),
+
                             Icon(Icons.cloud,size: 64,),
+
                             Text('Rain',style: TextStyle(fontSize: 18),)
                           ],
                         ),
@@ -57,19 +72,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   ),
                 ),
               ),
-
               SizedBox(height: 15,),
-
-                  
+         
                   Align(
                   alignment: Alignment.centerLeft,
                     child: Text('Weather Forecast',
                     style: TextStyle(fontSize: 20,
-                    fontWeight: FontWeight.bold),),
-                  ),   
-                  SizedBox(height: 8,),
+                    fontWeight: FontWeight.bold
+                    ),
+                    ),
+                    ),   
+                  SizedBox(height: 6,),
                  
-             SingleChildScrollView(scrollDirection: Axis.horizontal,
+                SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                    child: Row(
                       children: [
                         Forecast(),
@@ -85,7 +101,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       ],
                     ),
                  ),
-
                  SizedBox(height: 15,),
 
                   Align(
@@ -94,65 +109,28 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     style: TextStyle(fontSize: 20,
                     fontWeight: FontWeight.bold),),
                   ),   
-                  SizedBox(height: 8,),
+                  SizedBox(height: 6,),
 
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                     children: [
-                      
-                       Padding(
-                         padding: const EdgeInsets.all(14.0),
-                         child: Container(
-                           child: Column(
-                            children: [
-                              Icon(Icons.water_drop,size: 40,),
-                               
-                               Text('Humidity',
-                               style: 
-                               TextStyle(fontSize: 15,),
-                               ),
-                               
-                               Text('96',style: TextStyle(fontSize: 14),)
-                            ],
+                      Additional_Information(
+                        icon: (Icons.water_drop), 
+                        textInfo: 'Humidity', 
+                        number: '89'
+                        ),
+
+                        Additional_Information(
+                          icon: (Icons.air),
+                           textInfo: 'Wind Speed',
+                            number: '7.9'
                             ),
-                         ),
-                       ),
-                          
-                          Padding(
-                            padding: const EdgeInsets.all(14.0),
-                            child: Container(
-                                 child: Column(
-                                  children: [
-                                    Icon(Icons.wind_power_rounded,size: 40,),
-                                     
-                                     Text('Wind Speed',
-                                     style: 
-                                     TextStyle(fontSize: 15,),
-                                     ),
-                                     
-                                     Text('7.36',style: TextStyle(fontSize: 14),)
-                                  ],
-                                  ),
-                               ),
-                          ),
-                  
-                             Padding(
-                               padding: const EdgeInsets.all(14.0),
-                               child: Container(
-                                 child: Column(
-                                  children: [
-                                    Icon(Icons.solar_power_outlined,size: 40,),
-                                     
-                                     Text('Pressure',
-                                     style: 
-                                     TextStyle(fontSize: 15,),
-                                     ),
-                                     
-                                     Text('1015',style: TextStyle(fontSize: 14),)
-                                  ],
-                                  ),
-                               ),
-                             ),
+
+                            Additional_Information(
+                          icon: (Icons.beach_access),
+                           textInfo: 'Pressure',
+                            number: '1001'
+                            ),
                     ],
                   )
 
