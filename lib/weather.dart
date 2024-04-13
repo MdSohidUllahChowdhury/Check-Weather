@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:weather_app/weather_forecasr.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -15,7 +15,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Weather App'),
+          title: Text('Weather App',style: TextStyle(fontWeight: FontWeight.bold),),
           centerTitle: true,
           actions: [
             IconButton(onPressed: (){}, icon: Icon(Icons.refresh)),
@@ -56,91 +56,105 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
 
-              ,SizedBox(height: 15,),
+              SizedBox(height: 15,),
 
-                  Row(mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Weather Forecast '),
-                    ],
-                  ),
+                  
+                  Align(
+                  alignment: Alignment.centerLeft,
+                    child: Text('Weather Forecast',
+                    style: TextStyle(fontSize: 20,
+                    fontWeight: FontWeight.bold),),
+                  ),   
                   SizedBox(height: 8,),
                  
-                 SingleChildScrollView(scrollDirection: Axis.horizontal,
+             SingleChildScrollView(scrollDirection: Axis.horizontal,
                    child: Row(
                       children: [
-                        Container( //1
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
-                   
-                         Container( //2
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
-                   
-                         Container( //3
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
-
-                        Container( //4
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
-
-                        Container( //5
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
-
-                        Container( //6
-                          height: 95,
-                          width: 75,
-                          decoration: BoxDecoration(
-                    color: Color.fromARGB(158, 228, 228, 214),
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    backgroundBlendMode: BlendMode.hardLight,
-                                   ),
-                        ),SizedBox(width: 4,),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        Forecast(),
+                        
                       ],
                     ),
                  ),
 
                  SizedBox(height: 15,),
 
-                  Row(mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Additional Information '),
-                    ],
-                  ),
+                  Align(
+                  alignment: Alignment.centerLeft,
+                    child: Text('Additional Information',
+                    style: TextStyle(fontSize: 20,
+                    fontWeight: FontWeight.bold),),
+                  ),   
                   SizedBox(height: 8,),
+
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    
+                    children: [
+                      
+                       Padding(
+                         padding: const EdgeInsets.all(14.0),
+                         child: Container(
+                           child: Column(
+                            children: [
+                              Icon(Icons.water_drop,size: 40,),
+                               
+                               Text('Humidity',
+                               style: 
+                               TextStyle(fontSize: 15,),
+                               ),
+                               
+                               Text('96',style: TextStyle(fontSize: 14),)
+                            ],
+                            ),
+                         ),
+                       ),
+                          
+                          Padding(
+                            padding: const EdgeInsets.all(14.0),
+                            child: Container(
+                                 child: Column(
+                                  children: [
+                                    Icon(Icons.wind_power_rounded,size: 40,),
+                                     
+                                     Text('Wind Speed',
+                                     style: 
+                                     TextStyle(fontSize: 15,),
+                                     ),
+                                     
+                                     Text('7.36',style: TextStyle(fontSize: 14),)
+                                  ],
+                                  ),
+                               ),
+                          ),
+                  
+                             Padding(
+                               padding: const EdgeInsets.all(14.0),
+                               child: Container(
+                                 child: Column(
+                                  children: [
+                                    Icon(Icons.solar_power_outlined,size: 40,),
+                                     
+                                     Text('Pressure',
+                                     style: 
+                                     TextStyle(fontSize: 15,),
+                                     ),
+                                     
+                                     Text('1015',style: TextStyle(fontSize: 14),)
+                                  ],
+                                  ),
+                               ),
+                             ),
+                    ],
+                  )
 
                   
             ],
