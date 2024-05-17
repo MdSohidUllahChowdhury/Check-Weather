@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, dead_code
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/weather.dart';
@@ -13,12 +12,12 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,  
-        home:WeatherScreen() ,
+        home:const WeatherScreen() ,
         theme: ThemeData(
-          colorScheme: ColorScheme.dark()
+          colorScheme: const ColorScheme.dark()
         ),
       ),
-      designSize: Size(360, 640),
+      designSize: const Size(360, 640),
     );
   }
 }

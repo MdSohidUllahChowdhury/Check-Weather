@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// ignore: camel_case_types
 class Additional_Information extends StatelessWidget {
   
   final IconData icon;
@@ -17,26 +17,25 @@ class Additional_Information extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(14.0),
-      child: Container(
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              size: 35,
+      padding:  const EdgeInsets.all(14.0),
+      child: Column(
+        children: [
+          Icon(
+            icon,
+            size: 35,
+          ),
+          const Divider(),
+          Text(
+            textInfo,
+            style: const TextStyle(
+              fontSize: 15,
             ),
-            Text(
-              textInfo,
-              style: TextStyle(
-                fontSize: 15,
-              ),
-            ),
-            Text(
-              number,
-              style: TextStyle(fontSize: 14),
-            )
-          ],
-        ),
+          ),
+          Text(
+            number,
+            style: const TextStyle(fontSize: 14),
+          )
+        ],
       ),
     );
   }

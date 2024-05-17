@@ -16,10 +16,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Weather App',style: TextStyle(fontWeight: FontWeight.bold),),
+
+          title: const Text('Weather App',
+          style: TextStyle(fontWeight: FontWeight.bold),),
           centerTitle: true,
+           
           actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.refresh)),
+            IconButton(onPressed: (){},
+             icon: const Icon(Icons.refresh)),
           ],
         ),
 
@@ -38,22 +42,22 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 borderRadius: BorderRadius.circular(16)),
                   
                   child: 
-                  Container(
+                  SizedBox(
                   width: double.infinity,
-                  
+              
                   child: 
                   ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
                    
-                    child:
+                  child:
                      BackdropFilter( 
                       filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
                       
-                    child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                  child: const Padding(
+                        padding: EdgeInsets.all(16.0),
                         
-                        child:
-                         Column(
+                  child:
+                       Column(
                           children:
                            [
                             Text('286K',
@@ -61,9 +65,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               fontSize: 32,
                               fontWeight: FontWeight.bold),
                               ),
-
                             Icon(Icons.cloud,size: 64,),
-
                             Text('Rain',style: TextStyle(fontSize: 18),)
                           ],
                         ),
@@ -72,9 +74,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
          
-                  Align(
+              const Align(
                   alignment: Alignment.centerLeft,
                     child: Text('Weather Forecast',
                     style: TextStyle(fontSize: 20,
@@ -82,9 +84,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ),
                     ),
                     ),   
-                  SizedBox(height: 6,),
+              const SizedBox(height: 6,),
                  
-                SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                    child: Row(
                       children: [
@@ -98,17 +100,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       ],
                     ),
                  ),
-                 SizedBox(height: 15,),
+                 const SizedBox(height: 15,),
 
-                  Align(
+                  const Align(
                   alignment: Alignment.centerLeft,
                     child: Text('Additional Information',
                     style: TextStyle(fontSize: 20,
                     fontWeight: FontWeight.bold),),
                   ),   
-                  SizedBox(height: 6,),
+                  const SizedBox(height: 6,),
 
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                     children: [
                       Additional_Information(
@@ -127,14 +129,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           icon: (Icons.beach_access),
                            textInfo: 'Pressure',
                             number: '1001'
-                            ),
-                    ],
-                  )
-
-                  
+                          ),
+                ],
+              )                 
             ],
           ),
-        ),  
+       ),  
     );
   }
 }

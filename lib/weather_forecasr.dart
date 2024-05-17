@@ -12,19 +12,18 @@ class Forecast extends StatelessWidget {
     return Card(
       elevation: 10,
       child: Container(
-        //5
         height: 95,
         width: 80,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(14.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
               Text(
                 time,
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
               ),
               Icon(
                 icon,
@@ -32,7 +31,7 @@ class Forecast extends StatelessWidget {
               ),
               Text(
                 farenhite ,
-                style: TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 12),
               )
             ],
           ),
