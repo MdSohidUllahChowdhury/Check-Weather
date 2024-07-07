@@ -4,8 +4,11 @@ class Forecast extends StatelessWidget {
   final String time;
   final IconData icon;
   final String farenhite;
-  const Forecast({
-    super.key, required this.time, required this.icon, required this.farenhite});
+  const Forecast(
+      {super.key,
+      required this.time,
+      required this.icon,
+      required this.farenhite});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +26,15 @@ class Forecast extends StatelessWidget {
             children: [
               Text(
                 time,
-                style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
               ),
               Icon(
                 icon,
                 size: 30,
               ),
               Text(
-                farenhite ,
+                farenhite,
                 style: const TextStyle(fontSize: 12),
               )
             ],

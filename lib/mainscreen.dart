@@ -1,7 +1,8 @@
+// ignore_for_file: file_names
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:weather_app/addi_info.dart';
-import 'package:weather_app/weather_forecasr.dart';
+import 'package:weather_app/widget/addi_info.dart';
+import 'package:weather_app/widget/weather_forecasr.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -90,6 +91,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 scrollDirection: Axis.horizontal,
                    child: Row(
                       children: [
+                        
                         Forecast(time: '3:23 AM',icon: (Icons.cloud), farenhite: '289'),
                         Forecast(time: '12:01 PM',icon: (Icons.sunny), farenhite: '302'),
                         Forecast(time: '4:29 PM',icon: (Icons.sunny), farenhite: '299'),
