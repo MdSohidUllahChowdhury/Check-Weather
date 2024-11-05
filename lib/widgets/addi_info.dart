@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-// ignore: camel_case_types
-class Additional_Information extends StatelessWidget {
-  
+
+class AdditionalInformation extends StatelessWidget {
   final IconData icon;
   final String textInfo;
   final String number;
-  
-  const Additional_Information(
-    {
+
+  const AdditionalInformation({
     super.key,
     required this.icon,
     required this.textInfo,
     required this.number,
-    });
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  const EdgeInsets.all(14.0),
+      padding: const EdgeInsets.all(14.0),
       child: Column(
         children: [
           Icon(
